@@ -9,12 +9,15 @@
 각 슬라이드는 `slide-NN.mjs` 파일 1개입니다 (NN = 01, 02, 03 …).
 
 ```js
-import { C, base, text, box, pill, addBullets, table, arrow } from "../../lib/helpers.mjs";
+import { C, base, text, box, pill, addBullets, table, arrow } from "../lib/helpers.mjs";
 
 export default function slideNN(slide, ctx) {
   // 여기에 슬라이드 내용 작성
 }
 ```
+
+> **경로 주의**: `slides/slide-NN.mjs`에서는 `../lib/helpers.mjs` (한 단계 위).  
+> `fixtures/` 안의 예시 파일은 두 단계 아래에 있어서 `../../lib/helpers.mjs`를 사용합니다. 헷갈리지 마세요.
 
 ## 캔버스
 
@@ -78,7 +81,7 @@ C.dark    = "#101826"  // 다크 배경
 ## 예시 슬라이드
 
 ```js
-import { C, base, text, addBullets } from "../../lib/helpers.mjs";
+import { C, base, text, addBullets } from "../lib/helpers.mjs";
 
 export default function slide01(slide, ctx) {
   base(slide, ctx, "소개", "AI와 데이터 분석", { courseLabel: "데이터사이언스 | 2026" });
