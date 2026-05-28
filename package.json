@@ -1,0 +1,13 @@
+{
+  "name": "pptx-class",
+  "version": "1.0.0",
+  "description": "학생 발표 슬라이드 빌더 — LLM-agnostic PPTX generator",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs --slides-dir ./slides --out ./output.pptx"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  },
+  "license": "MIT"
+}

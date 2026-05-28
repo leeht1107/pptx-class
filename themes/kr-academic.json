@@ -1,0 +1,33 @@
+{
+  "name": "kr-academic",
+  "canvas": {
+    "widthPt": 1280,
+    "heightPt": 720,
+    "aspect": "16:9"
+  },
+  "fonts": {
+    "body": "Apple SD Gothic Neo",
+    "bodyFallback": ["Noto Sans KR", "Malgun Gothic", "Noto Sans", "sans-serif"],
+    "code": "JetBrains Mono"
+  },
+  "colors": {
+    "primary": "#003366",
+    "primaryMid": "#0055A5",
+    "primaryLight": "#1A7ABF",
+    "accent": "#0D7377",
+    "background": "#FFFFFF",
+    "codeBackground": "#F4F6F9",
+    "calloutBackground": "#E8F4FD",
+    "text": "#1A1A2E",
+    "muted": "#6C757D",
+    "tableHead": "#003366",
+    "tableAlt": "#F0F4F8",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "titlePt": 36,
+    "bodyPt": 22,
+    "footerPt": 10,
+    "lineHeight": 1.5
+  }
+}
