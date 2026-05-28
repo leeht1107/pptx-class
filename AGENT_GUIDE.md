@@ -1,6 +1,7 @@
 # AGENT_GUIDE — pptx-class LLM Spec
 
-> 이 파일을 AI(ChatGPT, Claude, Gemini, Copilot 등)에게 붙여넣고 슬라이드 생성을 요청하세요.
+> **설치(최초 1회)**와 **슬라이드 생성(매번)**을 분리해서 AI에게 요청하세요.  
+> 설치 프롬프트는 README.md Step A, 슬라이드 생성 시 이 파일 전체를 AI에게 붙여넣으세요.
 
 ---
 

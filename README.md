@@ -41,37 +41,53 @@ node scripts/build.mjs --slides-dir ./fixtures/10min-presentation --out ./output
 
 ## 방법 2: AI에게 맡기기 (Agentic)
 
-Claude Code, Cursor, Windsurf 등 **터미널 접근이 가능한 AI 도구**가 있으면 설치부터 슬라이드 생성까지 AI가 대신합니다.
-
-### 사용법
-
-아래 내용을 **AI에게 통째로 붙여넣기**하세요. `[발표 주제]` 부분만 바꾸면 됩니다.
+Claude Code, Cursor, Windsurf 등 **터미널 접근이 가능한 AI 도구**를 사용합니다.  
+설치(최초 1회)와 슬라이드 생성(매번)을 **분리해서** AI에게 요청하세요.
 
 ---
 
+### Step A — 설치 (최초 1회만)
+
+아래를 AI에게 붙여넣기:
+
 ```
-pptx-class를 설치하고 내 발표 슬라이드를 만들어줘.
+pptx-class를 설치해줘.
 
-[저장소]
-https://github.com/leeht1107/pptx-class
+git clone https://github.com/leeht1107/pptx-class.git
+cd pptx-class
+npm install
 
-[내 발표 주제]
-(여기에 발표 주제와 내용을 적어줘. 예: "딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장")
+설치 완료되면 "설치 완료. 폴더 경로: <경로>" 라고 알려줘.
+```
+
+---
+
+### Step B — 슬라이드 생성 (매번, 설치 후)
+
+아래를 AI에게 붙여넣기. `[발표 주제]`와 `[설치 경로]`만 바꾸면 됩니다:
+
+```
+pptx-class로 발표 슬라이드를 만들어줘.
+
+[설치 경로]
+~/pptx-class  (Step A에서 알려준 경로로 바꿔줘)
+
+[발표 주제]
+(예: "딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장")
 
 [해야 할 일]
-1. git clone https://github.com/leeht1107/pptx-class.git 실행
-2. cd pptx-class && npm install
-3. AGENT_GUIDE.md 읽어서 helpers API 파악
-4. 내 주제에 맞는 slide-01.mjs, slide-02.mjs … 파일을 slides/ 폴더에 생성
-5. node scripts/build.mjs --slides-dir ./slides --out ./output.pptx 실행
-6. 빌드 성공하면 output.pptx 경로 알려줘
+1. 설치 경로로 이동
+2. AGENT_GUIDE.md 읽기
+3. 주제에 맞는 slide-01.mjs, slide-02.mjs … 를 slides/ 폴더에 생성
+   (import 경로는 반드시 "../lib/helpers.mjs")
+4. node scripts/build.mjs --slides-dir ./slides --out ./output.pptx
+5. 완료되면 output.pptx 경로 알려줘
 ```
 
 ---
 
-AI가 clone → install → 슬라이드 코드 생성 → build → 결과 확인까지 모두 처리합니다.
-
-> ChatGPT 웹 / 일반 채팅 AI는 터미널 접근이 없어서 슬라이드 코드(.mjs 파일)만 생성해줍니다. 파일을 `slides/` 폴더에 저장 후 방법 1의 빌드 명령어를 직접 실행하세요.
+> **터미널 없는 AI (ChatGPT 웹 등)**: Step B의 슬라이드 코드(.mjs 파일)만 생성해줍니다.  
+> 파일을 `pptx-class/slides/` 폴더에 저장 후 방법 1의 빌드 명령어를 직접 실행하세요.
 
 ---
 
