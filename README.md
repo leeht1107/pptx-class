@@ -48,16 +48,21 @@ Claude Code, Cursor, Windsurf 등 **터미널 접근이 가능한 AI 도구**를
 
 ### Step A — 설치 (최초 1회만)
 
-아래를 AI에게 붙여넣기:
+아래를 AI에게 붙여넣기. `[설치 위치]`만 원하는 경로로 바꾸세요:
 
 ```
 pptx-class를 설치해줘.
 
-git clone https://github.com/leeht1107/pptx-class.git
-cd pptx-class
-npm install
+[설치 위치]
+~/Documents/pptx-class
+(Windows면 C:/Users/나의이름/Documents/pptx-class 같은 식으로 바꿔줘)
 
-설치 완료되면 "설치 완료. 폴더 경로: <경로>" 라고 알려줘.
+할 일:
+1. 설치 위치의 상위 폴더로 이동 (예: ~/Documents)
+2. git clone https://github.com/leeht1107/pptx-class.git "설치 위치"
+3. cd "설치 위치" && npm install
+4. 완료되면 "설치 완료. 절대 경로: <실제 절대 경로>" 형식으로 알려줘.
+   (이 경로를 Step B에서 사용합니다)
 ```
 
 ---
