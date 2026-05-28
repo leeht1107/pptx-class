@@ -12,19 +12,32 @@ AI 코드 생성기(ChatGPT, Claude, Gemini, Copilot 등)로 발표 슬라이드
 
 ### 설치 및 실행
 
+**① 설치할 경로를 정하세요** (아래 예시에서 원하는 경로로 바꾸기):
+
+| 운영체제 | 예시 경로 |
+|---------|---------|
+| Mac | `~/Documents/pptx-class` |
+| Windows | `C:\Users\내이름\Documents\pptx-class` |
+
+**② 터미널에서 아래 명령 실행** (`경로` 부분을 위에서 정한 경로로 교체):
+
 ```bash
-# 1. 이 저장소 받기
-git clone https://github.com/leeht1107/pptx-class.git
-cd pptx-class
-
-# (git 없으면: 우상단 Code → Download ZIP → 압축 해제 후 해당 폴더로 이동)
-
-# 2. 의존성 설치
+# Mac
+git clone https://github.com/leeht1107/pptx-class.git  ~/Documents/pptx-class
+cd ~/Documents/pptx-class
 npm install
-
-# 3. 템플릿으로 PPTX 빌드
 node scripts/build.mjs --slides-dir ./fixtures/10min-presentation --out ./output.pptx
 ```
+
+```bash
+# Windows (PowerShell)
+git clone https://github.com/leeht1107/pptx-class.git  C:\Users\내이름\Documents\pptx-class
+cd C:\Users\내이름\Documents\pptx-class
+npm install
+node scripts/build.mjs --slides-dir ./fixtures/10min-presentation --out ./output.pptx
+```
+
+> git이 없으면: 우상단 **Code → Download ZIP** → 압축 해제 후 폴더를 원하는 위치로 이동
 
 → `output.pptx` 생성됨. PowerPoint / Keynote / LibreOffice로 열기.
 
@@ -48,41 +61,42 @@ Claude Code, Cursor, Windsurf 등 **터미널 접근이 가능한 AI 도구**를
 
 ### Step A — 설치 (최초 1회만)
 
-아래를 AI에게 그대로 붙여넣기:
+**설치할 경로를 먼저 정하고**, 아래 `___경로___` 부분을 그 경로로 바꿔서 AI에게 붙여넣기:
 
 ```
-pptx-class를 내 Documents 폴더에 설치해줘.
+pptx-class를 설치해줘.
+
+설치 경로: ___경로___
+           (예 Mac: /Users/홍길동/Documents/pptx-class)
+           (예 Windows: C:\Users\홍길동\Documents\pptx-class)
 
 저장소: https://github.com/leeht1107/pptx-class
 
-아래 순서대로 실행해줘:
-1. 내 운영체제에 맞는 방법으로 Documents 폴더 안에 pptx-class 폴더를 만들고 설치
+순서대로 실행해줘:
+1. 위 경로에 git clone으로 설치
 2. npm install 실행
-3. 설치가 끝나면 딱 한 줄만 알려줘:
-   "설치 완료: [실제로 설치된 폴더 경로]"
-   (예시: 설치 완료: /Users/홍길동/Documents/pptx-class)
+3. 끝나면 한 줄만 알려줘: "설치 완료: [실제 경로]"
 ```
 
-→ AI가 알려준 경로를 어딘가에 메모해 두세요. Step B에서 씁니다.
+→ AI가 알려준 경로를 메모해 두세요. Step B에서 그대로 씁니다.
 
 ---
 
 ### Step B — 슬라이드 생성 (매번)
 
-아래를 AI에게 붙여넣기. **굵은 글씨 2곳**만 바꾸세요:
+`___경로___`와 `___주제___` 두 곳만 바꿔서 AI에게 붙여넣기:
 
 ```
 pptx-class로 발표 슬라이드를 만들어줘.
 
-설치 폴더: [Step A에서 메모한 경로]
-발표 주제: [여기에 주제 적기. 예: 딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장]
+설치 폴더: ___경로___   ← Step A에서 메모한 경로
+발표 주제: ___주제___   ← 예: 딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장
 
-아래 순서대로 실행해줘:
-1. 설치 폴더 안의 AGENT_GUIDE.md 파일 읽기
-2. 발표 주제에 맞는 슬라이드 파일들을 설치 폴더/slides/ 안에 생성
+순서대로 실행해줘:
+1. 설치 폴더 안의 AGENT_GUIDE.md 읽기
+2. 발표 주제에 맞는 슬라이드 파일을 설치 폴더/slides/ 안에 생성
 3. node scripts/build.mjs --slides-dir ./slides --out ./output.pptx 실행
-4. 완료되면 딱 한 줄만 알려줘:
-   "완료: [output.pptx의 실제 경로]"
+4. 끝나면 한 줄만: "완료: [output.pptx 경로]"
 ```
 
 ---
