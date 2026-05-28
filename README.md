@@ -48,51 +48,48 @@ Claude Code, Cursor, Windsurf 등 **터미널 접근이 가능한 AI 도구**를
 
 ### Step A — 설치 (최초 1회만)
 
-아래를 AI에게 붙여넣기. `[설치 위치]`만 원하는 경로로 바꾸세요:
+아래를 AI에게 그대로 붙여넣기:
 
 ```
-pptx-class를 설치해줘.
+pptx-class를 내 Documents 폴더에 설치해줘.
 
-[설치 위치]
-~/Documents/pptx-class
-(Windows면 C:/Users/나의이름/Documents/pptx-class 같은 식으로 바꿔줘)
+저장소: https://github.com/leeht1107/pptx-class
 
-할 일:
-1. 설치 위치의 상위 폴더로 이동 (예: ~/Documents)
-2. git clone https://github.com/leeht1107/pptx-class.git "설치 위치"
-3. cd "설치 위치" && npm install
-4. 완료되면 "설치 완료. 절대 경로: <실제 절대 경로>" 형식으로 알려줘.
-   (이 경로를 Step B에서 사용합니다)
+아래 순서대로 실행해줘:
+1. 내 운영체제에 맞는 방법으로 Documents 폴더 안에 pptx-class 폴더를 만들고 설치
+2. npm install 실행
+3. 설치가 끝나면 딱 한 줄만 알려줘:
+   "설치 완료: [실제로 설치된 폴더 경로]"
+   (예시: 설치 완료: /Users/홍길동/Documents/pptx-class)
 ```
+
+→ AI가 알려준 경로를 어딘가에 메모해 두세요. Step B에서 씁니다.
 
 ---
 
-### Step B — 슬라이드 생성 (매번, 설치 후)
+### Step B — 슬라이드 생성 (매번)
 
-아래를 AI에게 붙여넣기. `[발표 주제]`와 `[설치 경로]`만 바꾸면 됩니다:
+아래를 AI에게 붙여넣기. **굵은 글씨 2곳**만 바꾸세요:
 
 ```
 pptx-class로 발표 슬라이드를 만들어줘.
 
-[설치 경로]
-~/pptx-class  (Step A에서 알려준 경로로 바꿔줘)
+설치 폴더: [Step A에서 메모한 경로]
+발표 주제: [여기에 주제 적기. 예: 딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장]
 
-[발표 주제]
-(예: "딥러닝 기초 — 퍼셉트론, 역전파, CNN 3장")
-
-[해야 할 일]
-1. 설치 경로로 이동
-2. AGENT_GUIDE.md 읽기
-3. 주제에 맞는 slide-01.mjs, slide-02.mjs … 를 slides/ 폴더에 생성
-   (import 경로는 반드시 "../lib/helpers.mjs")
-4. node scripts/build.mjs --slides-dir ./slides --out ./output.pptx
-5. 완료되면 output.pptx 경로 알려줘
+아래 순서대로 실행해줘:
+1. 설치 폴더 안의 AGENT_GUIDE.md 파일 읽기
+2. 발표 주제에 맞는 슬라이드 파일들을 설치 폴더/slides/ 안에 생성
+3. node scripts/build.mjs --slides-dir ./slides --out ./output.pptx 실행
+4. 완료되면 딱 한 줄만 알려줘:
+   "완료: [output.pptx의 실제 경로]"
 ```
 
 ---
 
-> **터미널 없는 AI (ChatGPT 웹 등)**: Step B의 슬라이드 코드(.mjs 파일)만 생성해줍니다.  
-> 파일을 `pptx-class/slides/` 폴더에 저장 후 방법 1의 빌드 명령어를 직접 실행하세요.
+> **ChatGPT 웹처럼 터미널이 없는 AI**: 슬라이드 코드 파일만 만들어줍니다.  
+> AI가 만들어준 파일을 `pptx-class/slides/` 폴더에 저장한 뒤,  
+> 방법 1의 빌드 명령어를 직접 실행하세요.
 
 ---
 
